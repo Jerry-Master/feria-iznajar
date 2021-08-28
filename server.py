@@ -102,7 +102,7 @@ def add():
         if request.form['quantity'] != '':
             user.money += int(request.form['quantity'])
             db.session.commit()
-    return url_for('admin2')
+    return url_for('admin')
 
 @app.route('/remove/', methods=['GET', 'POST'])
 def remove():
@@ -111,4 +111,4 @@ def remove():
         if request.form['quantity'] != '':
             user.money -= int(request.form['quantity'])
             db.session.commit()
-    return url_for('admin2')
+    return url_for('admin')
