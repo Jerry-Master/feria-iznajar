@@ -54,7 +54,7 @@ function checkLog(){
     if (data === 'True'){
       if (document.getElementById("user").value === 'admin'){
         $.get('/admin/', function(data, status){
-          window.location = data;
+          document.write(data);
         });
       } else {
         $('#error-log').addClass('invisible');

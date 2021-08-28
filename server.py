@@ -81,10 +81,6 @@ def money2(username, money):
 
 @app.route('/admin/')
 def admin():
-    return url_for('admin2')
-
-@app.route('/admin2/')
-def admin2():
     return render_template('admin.html')
 
 @app.route('/admin-data/')
