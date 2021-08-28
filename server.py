@@ -2,6 +2,12 @@ from flask import Flask, render_template, request, url_for
 from flask_assets import Environment, Bundle
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import select, desc
+import hashlib
+
+def encrypt_string(hash_string):
+    sha_signature = \
+        hashlib.sha512(hash_string.encode()).hexdigest()
+    return sha_signature
 
 app = Flask(__name__)
 
@@ -20,7 +26,7 @@ class User(db.Model):
 
     _id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     username = db.Column(db.String(100), primary_key=True, nullable=False)
-    password = db.Column(db.String(100), nullable=False)
+    password = db.Column(db.String(10000), nullable=False)
     money = db.Column(db.Integer(), nullable=False)
 
     def __init__(self, username, password, money):
@@ -42,7 +48,8 @@ def chekLog():
         user = db.session.execute(
             select(User.username, User.password).where(User.username==request.form['username'])
             ).first()
-        return str(user[1] == request.form['password'])
+        user_password = encrypt_string(request.form['password'])
+        return str(user[1] == user_password)
 
 @app.route('/signup/')
 def signup():
@@ -59,7 +66,7 @@ def register():
     if request.method == 'POST':
         data = request.form
         username = data['username']
-        password = data['password']
+        password = encrypt_string(data['password'])
 
         new_data = User(username, password, 0)
         db.session.add(new_data)
