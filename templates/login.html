@@ -2,7 +2,7 @@
 <html lang="en" >
 <head>
     <meta charset="UTF-8">
-    <title>CodePen - Material Login Form</title>
+    <title>Login</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
     {% assets "scss_all" %}
     <link rel=stylesheet type=text/css href="{{ ASSET_URL }}">
@@ -24,17 +24,24 @@
     <a class="title nodec" href='/signup'>Sign up</a>
     <form>
       <div class="input-container">
-        <input type="#{type}" id="#{label}" required="required"/>
+        <input type="text" id="user" required="required" name='username'
+            onfocusout="checkUser(false)"/>
         <label for="#{label}">Username</label>
         <div class="bar"></div>
       </div>
+      <div id='error-user' class="input-container invisible">
+        <span>Username does not exists</span>
+      </div>
       <div class="input-container">
-        <input type="#{type}" id="#{label}" required="required"/>
+        <input type="password" id="password" required="required" name='password'/>
         <label for="#{label}">Password</label>
         <div class="bar"></div>
       </div>
+      <div id='error-log' class="input-container invisible">
+        <span>Username and password don't match</span>
+      </div>
       <div class="button-container">
-        <button><span>Go</span></button>
+        <button onclick='checkLog()' type='button'><span>Go</span></button>
       </div>
     </form>
   </div>

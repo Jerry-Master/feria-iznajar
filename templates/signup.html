@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="SimpleFormsApp">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>CodePen - Material Login Form</title>
+    <title>Registration</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
     {% assets "scss_all" %}
     <link rel=stylesheet type=text/css href="{{ ASSET_URL }}">
@@ -10,7 +10,7 @@
     <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900|RobotoDraft:400,100,300,500,700,900'>
     <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
 </head>
-<body ng-controller="RegistrationController as reg">
+<body>
 <!-- partial:index.partial.html -->
 <!-- Mixins-->
 <!-- Pen Title-->
@@ -24,9 +24,13 @@
     <a class="title nodec" href='/signup'>Sign up</a>
     <form action='/register/' method="post">
       <div class="input-container">
-        <input type="text" id="user" required="required" name='username'/>
+        <input type="text" id="user" required="required" name='username'
+            onfocusout="checkUser()"/>
         <label for="#{label}">Username</label>
         <div class="bar"></div>
+      </div>
+      <div id='error-user' class="input-container invisible">
+        <span>Username is not unique</span>
       </div>
       <div class="input-container">
         <input type="password" id="password" required="required" name='password'

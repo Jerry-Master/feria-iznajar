@@ -398,9 +398,158 @@
       opacity: 0;   }
 }
 
-.nodec {
-  text-decoration: none !important;
-  display: block; }
+.container {
+  top: 0%;
+  left: 0%; }
 
-  .invisible {
-    visibility: hidden; }
+  .nodec {
+    text-decoration: none !important;
+    display: block; }
+
+    .invisible {
+      display: none;
+      visibility: hidden; }
+
+      :root {
+        --color-white: #fff;
+        --color-darkest: #251600;
+        --color-yellow: #f4c928;
+        --color-yellow-dark: #523100;
+        --resize: 0.5; }
+
+        body {
+          background-color: #6B5B95; }
+
+          h1 {
+            left: 50%;
+            text-align: center;
+            background: #ccc;
+            background: linear-gradient(90deg, #FF6F61, yellow);
+            font-family: system-ui;
+            font-size: 4rem;
+            line-height: 115%;
+            -webkit-text-fill-color: transparent;
+            -webkit-background-clip: text; }
+
+            .texto {
+              color: #f4c928;
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              margin-top: calc(-120px * var(--resize));
+              margin-left: calc(-80px * var(--resize));
+              font-size: calc(200px * var(--resize));
+              font-family: 'Super Mario Bros Alphabet', sans-serif;
+              text-shadow: 0 1px 0 #e6dfb3, 0 2px 0 #dfd79f, 0 3px 0 #d9cf8c, 0 4px 0 #d4c87d,
+                            0 5px 0 #d1c575, 0 6px 0 #cfc26e, 0 7px 0 #cdc06a, 0 8px 0 #ccbe66, 0 0 5px rgba(0,
+                            0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.2), 0 3px 5px rgba(0, 0, 0, 0.2),
+                            0 5px 10px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.2), 0 20px 20px rgba(0,
+                            0, 0, 0.3); }
+
+              .coin {
+                margin: 10px auto 0px auto;
+                position: relative;
+                height: calc(510px * var(--resize));
+                width: calc(500px * var(--resize));
+                border-radius: 42% 50% 50% 46%;
+                transform: rotateY(30deg);
+                background: linear-gradient(200deg, #e3b003, #987500); }
+                .coin::before {
+                  content: "";
+                  position: absolute;
+                  top: 0px;
+                  left: calc(-31px * var(--resize));
+                  height: calc(510px * var(--resize));
+                  width: calc(470px * var(--resize));
+                  border-radius: 50%;
+                  background: linear-gradient(210deg, #fff, #fff 10%, #a47b00 35%, #875e00 38%, #875e00 50%,
+                                    #523100); }
+                  .coin::after {
+                    content: "";
+                    position: absolute;
+                    top: 7px;
+                    left: calc(-29px * var(--resize));
+                    height: calc(496px * var(--resize));
+                    width: calc(455px * var(--resize));
+                    border-radius: 50%;
+                    background: linear-gradient(220deg, #ffec50, #f3c403); }
+
+.center {
+  position: absolute;
+  z-index: 1;
+  top: calc(50px * var(--resize));
+  left: calc(20px * var(--resize));
+  height: calc(400px * var(--resize));
+  width: calc(350px * var(--resize));
+  border-radius: 50%;
+  background: linear-gradient(230deg, #764600, #ecba00 70%, #fff 80%, #fff); }
+  .center::before {
+    box-sizing: border-box;
+    content: "";
+    position: absolute;
+    top: calc(7px * var(--resize));
+    right: calc(1px * var(--resize));
+    height: calc(384px * var(--resize));
+    width: calc(335px * var(--resize));
+    border-radius: 50%;
+    border-left: solid 5px #f9ca19;
+    background: linear-gradient(230deg, #fff681, #ffda29 50%, #dca700 80%, #dca700); }
+
+.rectangle {
+  position: absolute;
+  left: calc(150px * var(--resize));
+  top: 50%;
+  transform: translateY(-50%) rotateY(40deg);
+  z-index: 1;
+  height: calc(290px * var(--resize));
+  width: calc(100px * var(--resize));
+  border-radius: calc(10px * var(--resize));
+  border-left: 2px solid #d6ac00;
+  border-top: 2px solid #d6ac00;
+  box-shadow: 3px 0 0 #bc9b14;
+  background: linear-gradient(220deg, #b68801, #b68801 3%, #d3a00b 13%, #d3a00b 10%,
+    #fff 35%, #fff 36%, #f5c400 55%, #f3c300 85%, #fff); }
+  .rectangle::before {
+    content: "";
+    position: absolute;
+    top: calc(10px * var(--resize));
+    right: calc(-13px * var(--resize));
+    transform: rotateY(40deg);
+    height: calc(270px * var(--resize));
+    width: calc(110px * var(--resize));
+    border-radius: 10px 10px 10px 10px;
+    background: linear-gradient(to bottom, #4e3000, #8a5500 4px, #c09400 8px, #c09400 50%,
+        #c09400 90%, #ffec65); }
+    .rectangle::after {
+      content: "";
+      position: absolute;
+      top: calc(10px * var(--resize));
+      right: calc(-6px * var(--resize));
+      transform: rotateY(40deg);
+      height: calc(264px * var(--resize));
+      width: calc(60px * var(--resize));
+      border-radius: 1px 5px 0px 1px;
+      background: linear-gradient(to bottom, #4e3000, #ffec39 6px, #fedf21 99%, #ffea10); }
+
+table {
+  color: #fff;
+  table-layout: fixed;
+  width: 100%;
+  border-collapse: collapse;
+  border: 3px solid purple;
+  background-color: #fdbf6f; }
+
+  table button {
+    font-size: 10px; }
+
+    table input {
+      width: 30%; }
+
+      tbody tr:nth-child(odd) {
+        background-color: #e31a1c; }
+
+        tbody tr:nth-child(even) {
+          background-color: #ff7f00; }
+
+          tbody tr {
+            background-image: url(noise.png); }
