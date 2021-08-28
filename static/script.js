@@ -50,7 +50,6 @@ function checkLog(){
     'username': document.getElementById("user").value,
     'password': document.getElementById("password").value
   }, function(data, status){
-    console.log(document.getElementById("user").value);
     if (data === 'True'){
       if (document.getElementById("user").value === 'admin'){
         $.get('/admin/', function(data, status){
