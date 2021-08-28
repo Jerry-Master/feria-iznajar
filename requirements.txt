@@ -102,7 +102,6 @@ oauthlib==3.1.1
 openpyxl==3.0.7
 opt-einsum==3.3.0
 orjson==3.6.1
-packaging @ file:///private/tmp/sip--packaging-20210619-77867-j1uolo/packaging-20.9
 pandas==1.1.5
 pandocfilters==1.4.3
 parsel==1.6.0
